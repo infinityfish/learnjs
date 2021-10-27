@@ -1,21 +1,8 @@
 import React from 'react'
 
-    function Header({ title }){
-        return (
-            <div class="header">
-                <h2>{ title ? title : "BantuGeeks is Awesome" }</h2>
-                <h5><a href='learning.html'>Go to LearningPage</a></h5>
-            </div>
-        )
-    }
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
-    function Footer(){
-        return (
-            <div class= "footer">
-                <h6>CopyRight 2022 BantuGeeks</h6>
-            </div>
-        )
-    }
 
    export default function HomePage(){
 
@@ -29,7 +16,7 @@ import React from 'react'
         }
         return (
             <div class="container">
-                <Header title="Learn JS the EZ way"/>
+                <Header title="BantuGeeks Rocks with Next.js"/>
                 <p>This is the body of the Home Page</p>
                 <ul>
                     <h5>List of students</h5>
