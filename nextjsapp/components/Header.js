@@ -1,7 +1,9 @@
 import Link from 'next/link'
+import styles from './Header.module.css'
+
     export default function Header({ title }){
         return (
-            <div class="header">
+            <div>
                 <h2>{ title ? title : "BantuGeeks on Next.js" }</h2>
                 <Link href='/'>
                  <a >HomePage</a>

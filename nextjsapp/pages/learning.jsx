@@ -1,3 +1,4 @@
+import styles from './Home.module.css'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -15,7 +16,7 @@ export default function LearningPage(){
     
 
     return (
-        <div class="container">
+        <div className={styles.container}>
             <Header title="JS Lessons for React"/>
             <p>This is what you need to know to be able to work with React</p>
             <ol>
@@ -23,7 +24,7 @@ export default function LearningPage(){
                 {topics.map(topic => <li key={topic}>{topic}</li>)}
             </ol>
 
-            <p>
+         
                 <h6>React concepts to Understand</h6>
                 <ol>
                     <li>Components</li>
@@ -31,7 +32,7 @@ export default function LearningPage(){
                     <li>State</li>
                 </ol>
 
-            </p>
+            
             
             <Footer />
         </div>
