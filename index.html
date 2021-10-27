@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Basic React Component</title>
+</head>
+<body>
+    <div id="app"></div>
+    
+</body>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<script type="text/jsx">
+
+    const app = document.getElementById("app");
+
+    function Header({ title }){
+        return (
+            <div class="header">
+                <h2>{ title ? title : "BantuGeeks is Awesome" }</h2>
+                <p><a href='learning.html'>Go to LearningPage</a></p>
+            </div>
+        )
+    }
+
+    function Footer(){
+        return (
+            <div class= "footer">
+                <h6>CopyRight 2022 BantuGeeks</h6>
+            </div>
+        )
+    }
+
+    function HomePage(){
+
+        const students = ['ola', 'mary', 'ife']
+        
+        const [likes, setLikes] = React.useState(0)
+
+        function handleClick(){
+            console.log("increment clicked")
+            setLikes(likes + 1)
+        }
+        return (
+            <div class="container">
+                <Header title="Learn JS the EZ way"/>
+                <p>This is the body of the Home Page</p>
+                <ul>
+                    <h5>List of students</h5>
+                    {students.map(student => <li key={student}>{student}</li>)}
+                </ul>
+                <button onClick={handleClick}>Like ({likes}) </button>
+                
+                <Footer />
+            </div>
+        )    
+    }
+
+    ReactDOM.render(<HomePage />, app);
+
+</script>
+</html>

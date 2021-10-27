@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Basic React Component</title>
+</head>
+<body>
+    <div id="app"></div>
+    
+</body>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<script type="text/jsx">
+
+    const app = document.getElementById("app");
+
+    function Header({ title }){
+        return (
+            <div class="header">
+                <h2>{ title ? title : "BantuGeeks is Awesome" }</h2>
+                <a href='index.html'>Go to HomePage</a>
+            </div>
+        )
+        
+    }
+
+
+    function Footer(){
+        return (
+            <div class= "footer">
+                <h6>CopyRight 2022 BantuGeeks</h6>
+            </div>
+        )
+    }
+
+    function LearningPage(){
+
+        const topics = [
+            'Functions and Arrow Functions', 
+            'Objects, Arrays and Array Methods', 
+            'Destructuring and Spread Operator',
+            'Template Literals',
+            'Ternary Operator',
+            'ES Modules, import/export syntax',
+            ]
+        
+
+        return (
+            <div class="container">
+                <Header title="JS Lessons for React"/>
+                <p>This is what you need to know to be able to work with React</p>
+                <ol>
+        
+                    {topics.map(topic => <li key={topic}>{topic}</li>)}
+                </ol>
+
+                <p>
+                    <h6>React concepts to Understand</h6>
+                    <ol>
+                        <li>Components</li>
+                        <li>Props</li>
+                        <li>State</li>
+                    </ol>
+
+                </p>
+                
+                <Footer />
+            </div>
+        )    
+    }
+
+    ReactDOM.render(<LearningPage />, app);
+
+</script>
+</html>
