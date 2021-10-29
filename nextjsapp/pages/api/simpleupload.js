@@ -43,6 +43,7 @@ export default async function handler(req, res){
     //       message: "The file type is not a valid type",
     //     });
     // }
+// amazon s3 upload: https://stackoverflow.com/questions/66499319/uploading-image-data-appears-like-this-1aqaq2b-and-image-is-bla
 
     const data = await new Promise((resolve, reject) => {
         const form = formidable({
