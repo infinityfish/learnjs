@@ -33,6 +33,8 @@ export default async function handler(req, res){
         return true;
     };
 
+    let filePath = '';
+
     // const isValid = isFileValid(file);
     // if (!isValid) {
     //     // throes error if file isn't valid
@@ -59,6 +61,7 @@ export default async function handler(req, res){
             //add isValid here
             file.path = path.join(`public/images/${userFolder}`, slugify(file.name))
             console.log("fileName changed: ", file.path)
+            filePath = path.join(`${userFolder}`, slugify(file.name))
         })
 
         form.parse(req, async (err, fields, files) => {
@@ -66,8 +69,9 @@ export default async function handler(req, res){
             //add is valid here
             if (err) return reject(err)
             //send to db from here
-            console.log( files );
-            console.log( fields );
+            console.log("Picture is at : ", filePath );
+            console.log("Name: ", fields.name );
+            console.log("Price: ", fields.price );
             resolve(fields, files)
         })
 
